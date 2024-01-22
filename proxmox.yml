@@ -1,0 +1,23 @@
+---
+- name: Setup NTP service
+  hosts: all
+  become: true
+
+  roles:
+    - role: geerlingguy.ntp
+      ntp_area: "{{ node_ntp_area }}"
+      ntp_manage_config: "{{ node_ntp_manage_config }}"
+      ntp_timezone: "{{ node_ntp_timezone }}"
+
+- name: Prepare Proxmox VM
+  hosts: proxmox
+  gather_facts: true
+  collections:
+    - devops.devops_virtualization_collection
+  roles:
+    - role: ansible_role_proxmox
+      vars:
+        root_password: "{{ proxmox_root_password }}"
+        users: "{{ proxmox_users }}"
+        ssh_pub_keys: "{{ proxmox_ssh_pub_keys }}"
+        _programs: "{{ proxmox_programs }}"

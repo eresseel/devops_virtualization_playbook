@@ -1,0 +1,13 @@
+---
+proxmox_root_password: "root123"
+proxmox_users:
+  - name: ansible
+
+proxmox_ssh_pub_keys:
+  - user: ansible
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDenSvVq4FkXwB6ybNkHFA2bQowEmZ26JVExrwxxmxpNLyy3OE3Wzr1ixohGOj9dIpC2jGt40mWepOJTTkYRL7u2oGgU9KjSdzFY/2zV+3Lz62R3p2VmimbJiFgAF9BHTJPUt8/IB+OYk2Lrz2yJasMs7LRwWkmS4fq+vS5U2f4ArtCKthRXgBOCI7Ise8S+MZHYZBQkZn5GMD0zMmJIFw4zHwkDlVPA5EkL6VoqJEOIihvNV42liqmI2MrtL3xMRjbFF9eGOv/+wFOaEdqouBjt7SvyigZA/2y32GPUnSJ/0Vr004Z9d2xCariw9YHt8Dcp7iSNODtOMr8jJD6A7rcs70+wjX5raKVHNjk+G7JaKKW+b3Pj0TjZ3VY6FxLReBzGPMh1grfsc74FTWAGWOCrt4YdAeIRYK+vkTzEiAZmOWJmm+dxtMr6sZYg+eq+hHylqd8MvWnCtwU484v5edYj3pa52NDIyyZ5IsVzd7H6WfkVOGbqAawrQTgXDiI5p0= laszlo.beres@aim064linux.ad.adasworks.com"
+
+proxmox_programs:
+  - name: python3-apt
+  - name: python3-pip
+  - name: python3-venv
